@@ -1,0 +1,90 @@
+@import url("../css/common.css");
+
+body{
+    background-color: green;
+    position: relative;
+    a{
+        ul.artist-image{}
+    }
+    &.intro{                            // <body class="intro">
+        background-color: #ff3901; 
+        div.logo-top{
+            width: 100%;
+           
+            a{
+                width: 100%;
+                svg{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    div.logo-top{
+        width: 15vw;
+        top:26px;
+        transform: translateX(-50%);
+        text-align: center;
+        left: 50vw;
+        position: fixed;
+        a{
+            width: 15vw;
+            svg{
+                width: 100%;
+            }
+        }
+    }
+
+    div.btn{
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        width: 100%;
+        padding: 30px;
+            div.left-btn{
+                width: 40px;
+                img{
+                    width: 100%;
+                }
+            }
+
+            div.right-btn{
+                width: 40px;
+                img{
+                    width: 100%;
+                }
+            }
+    }
+
+    div.contianer{
+        div.menu{
+            a{
+                ul{
+                    li{}
+                }
+            }
+        }
+
+        div.logo-bottom{
+            a{
+                svg{}
+            }
+        }
+
+    //     div.footer-container{
+    //         a{
+    //             ul.sns{
+    //                 li{}
+    //             }
+
+    //             div.lang{
+    //                 p{}
+    //                 ul{
+    //                     li{}
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
+}

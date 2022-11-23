@@ -1,0 +1,77 @@
+@import url("../css/common.css");
+
+
+
+main{
+    a{
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    
+
+    ul.artist-image{
+            height: 969px;
+            display: flex;
+
+            li{
+                img{
+                object-fit: cover;
+                width: 100%;
+                z-index: -999;
+                /*object-position: top;*/
+                }
+            }
+
+            
+        }
+
+    div.btn{
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        top: 50%;
+        width: 100%;
+        padding: 30px;
+
+        div.left-btn{
+            width: 40px;
+            img{
+                width: 100%;
+            }
+        }
+        div.right-btn{
+            width: 40px;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    }
+
+    div.left{
+        a{
+            ul{
+                li{
+                    font-family: 'NHU';
+                    font-size: 4.0vw;
+                    line-height: 1;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    div.logo{
+        div.logo-top{
+            a{
+                svg{}
+            }
+        }
+        div.logo-bottom{
+            a{
+                svg{}
+            }
+        }
+    }
+    
+}

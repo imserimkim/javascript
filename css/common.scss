@@ -1,0 +1,41 @@
+@import url("../css/font.css");
+
+  body,html,p,a,ul,li,nav,div{
+    margin: 0px;
+    padding: 0px;
+    top: 0px;
+  }
+
+  ol,ul,li{
+	padding: 0;
+	margin:0;
+	list-style: none;
+  }
+
+  a{
+    color: #FF3901;
+    text-decoration: none;
+  }
+
+  * {
+      box-sizing: border-box;
+  }
+
+
+// footer
+
+
+// div.footer-container{
+//   a{ 
+//     ul.sns{
+//       li{}
+//     }
+
+//     div.lang{
+//       p{}
+//       ul{
+//         li{}
+//       }
+//     }
+//   }
+// }

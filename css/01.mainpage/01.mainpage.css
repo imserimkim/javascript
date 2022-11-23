@@ -1,0 +1,43 @@
+@import url("../css/common.css");
+main a {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+main a ul.artist-image {
+  height: 969px;
+  display: flex;
+}
+main a ul.artist-image li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  z-index: -999;
+  /*object-position: top;*/
+}
+main a div.btn {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  width: 100%;
+  padding: 30px;
+}
+main a div.btn div.left-btn {
+  width: 40px;
+}
+main a div.btn div.left-btn img {
+  width: 100%;
+}
+main a div.btn div.right-btn {
+  width: 40px;
+}
+main a div.btn div.right-btn img {
+  width: 100%;
+}
+main div.left a ul li {
+  font-family: "NHU";
+  font-size: 4vw;
+  line-height: 1;
+  font-weight: 400;
+}/*# sourceMappingURL=01.mainpage.css.map */

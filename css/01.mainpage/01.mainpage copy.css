@@ -1,0 +1,50 @@
+@import url("../css/common.css");
+body {
+  background-color: green;
+  position: relative;
+}
+body.intro {
+  background-color: #ff3901;
+}
+body.intro div.logo-top {
+  width: 100%;
+}
+body.intro div.logo-top a {
+  width: 100%;
+}
+body.intro div.logo-top a svg {
+  width: 100%;
+}
+body div.logo-top {
+  width: 15vw;
+  top: 26px;
+  transform: translateX(-50%);
+  text-align: center;
+  left: 50vw;
+  position: fixed;
+}
+body div.logo-top a {
+  width: 15vw;
+}
+body div.logo-top a svg {
+  width: 100%;
+}
+body div.btn {
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  width: 100%;
+  padding: 30px;
+}
+body div.btn div.left-btn {
+  width: 40px;
+}
+body div.btn div.left-btn img {
+  width: 100%;
+}
+body div.btn div.right-btn {
+  width: 40px;
+}
+body div.btn div.right-btn img {
+  width: 100%;
+}/*# sourceMappingURL=01.mainpage copy.css.map */
