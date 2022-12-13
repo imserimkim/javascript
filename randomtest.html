@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주사위</title>
+</head>
+<body>
+    <article class="dice">
+        <h2>주사위 돌리기</h2>
+        <!-- <div class="play"> -->
+                <!-- <p class="display">시작하기</p> -->
+                <div class="con">
+                    <img src="./img/j01.png" alt="">
+                </div>
+                <p class="btn">
+                    <!-- <img class="img" src=""> -->
+                        <button>돌리기</button>
+                        <button>다시하기</button>
+                </p>
+        <!-- </div> -->
+
+    <!-- <style>
+        div.play{
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        p.display{
+            width: 80%;
+            background-color: #ddd;
+            height: 80%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style> -->
+
+<style>
+</style>
+    </article>
+
+    <script>
+        const elBtn = document.querySelectorAll('.btn button');
+        // const con = document.querySelector('.con');
+        const elImg = document.querySelector('img');
+        
+        let data = [
+            {src:'./img/j01.png'},
+            {src:'./img/j02.png'},
+            {src:'./img/j03.png'},
+            {src:'./img/j04.png'},
+            {src:'./img/j05.png'},
+            {src:'./img/j06.png'},
+        ];
+
+        // elImg.addEventListener('click',function(){
+        //     let Num = Math.ceil(Math.random()*7)-1;
+        //     this.src = data[Num].src;
+           
+        // });
+
+        elBtn.forEach(function(btn,key){
+            btn.addEventListener('click',function(){
+                if(key==0){
+                    elImg.src =data[Math.ceil(Math.random()*6)-1].src;
+                }else if(key==1){
+                    elImg.src=data[0].src;            
+                }
+            })
+        })
+    </script>
+</body>
+</html>
