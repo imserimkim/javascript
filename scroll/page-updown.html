@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page-up-down 12-13</title>
+</head>
+<body>
+    <main>
+        <section>content 01</section>
+        <section>content 02</section>
+        <section>content 03</section>
+        <section>content 04</section>
+        <section>content 05</section>
+    </main>
+
+
+    <style>
+        ::-webkit-scrollbar{
+            display: none;
+            /* background: transparent; */
+        }
+
+        /* button, thumb, track, corner */ 
+
+        /* ::-webkit-scrollbar-thumb{
+            background-color: black;
+        } */
+
+
+        body{
+            margin: 0;
+
+        }
+        main{
+            position: fixed;
+            width: 100%;
+            left: 0;
+            top: 0;
+            transition: 1s;
+        }
+
+        section{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10rem;
+        }
+
+        section:nth-child(even) {
+            background-color: #f3aa96;
+        }
+    </style>
+
+    <script>
+
+        let idx = 0;
+        let timeOut;
+
+        const elMain = document.querySelector('main'), 
+            elSec = document.querySelectorAll('section');
+        document.body.style = `height:${elMain.offsetHeight}px`;
+
+        let offset = [];
+        elSec.forEach(function(section){
+            offset.push(section.offsetTop);
+        
+        window.addEventListener('scroll',function(){
+            elMain.style = `transform:translateY(-${offset[key]}px)`;
+
+        })
+})
+        
+    </script>
+
+</body>
+</html>
