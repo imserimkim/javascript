@@ -57,43 +57,22 @@
 
     <script>
 
-        let pos = {y:0, y2:0, state: true}
         let idx = 0;
         let timeOut;
-        let offset = [];
-    
-            const elMain = document.querySelector('main'), 
-                elSec = document.querySelectorAll('section');
-            document.body.style = `height:${elMain.offsetHeight}px`;
 
+        const elMain = document.querySelector('main'), 
+            elSec = document.querySelectorAll('section');
+        document.body.style = `height:${elMain.offsetHeight}px`;
+
+        let offset = [];
         elSec.forEach(function(section){
             offset.push(section.offsetTop);
-        });
         
         window.addEventListener('scroll',function(){
+            elMain.style = `transform:translateY(-${offset[key]}px)`;
 
-            pos.y = window.pageYOffset;
-            pos.state = (pos.y > pos.y2)? true: false;
-            pos.y2 = pos.y;
-
-            clearTimeout(timeOut);
-                timeOut = setTimeout(function(){
-                    if (pos.state) {
-                        //scroll 시 나타나는 이벤트 
-                        idx ++;
-                        console.log(idx);
-                        console.log(pos.state);
-                    } else {
-                        idx--; 
-                        console.log(idx);
-                        console.log(pos.state);
-                        
-                    }
-                    
-                    elMain.style = `transform:translateY(-${offset[idx]}px)`;
-
-                },100)
-        });
+        })
+})
         
     </script>
 
