@@ -1,0 +1,264 @@
+@import url("../css/font.css");
+
+body,html,p,a,ul,li,nav,div{
+    margin: 0px;
+    padding: 0px;
+}
+
+ol,ul,li{
+	padding: 0;
+	margin:0;
+	list-style: none;
+}
+
+a{
+    color: #FF3901;
+    text-decoration: none;
+}
+
+  * {
+        box-sizing: border-box;
+    }
+
+
+
+body{
+    div.artist-wrap{
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        top: 4%;
+        // left: 0.2%;   //사진 가운데로
+        z-index: -9999;
+        position: fixed;
+        
+        ul.artist-image{
+            display: flex;
+            padding-top:114px;
+            transform: scale(1.5);
+            
+            li{
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                a{
+                    // max-width: 50vw;
+                    width: 100%;
+                    height: 100%;
+                    img{
+                         // position:absolute;
+                        max-width: 50vw;
+                        max-height: 73vh;
+                        // width: 100%;
+                        // height: 100%;
+                         // object-fit: contain;
+                    }
+                }
+            }
+        }
+    }
+
+    div.logo-top{
+        width: 15vw;
+        top: 26px;
+        transform: translateX(-50%);
+        text-align: center;
+        left: 50vw;
+        position: fixed;
+        svg{
+            width: 100%;
+        }
+    }
+
+    div.btn{
+        display: flex;
+        position: fixed;
+        justify-content: space-between;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        padding: 30px;
+
+        div.left-btn{
+            width: 40px;
+            a{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        div.right-btn{
+            width: 40px;
+            a{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    div.container{
+        div.menu{
+            width: 350px;
+            z-index: 2;
+            position: fixed;
+            bottom: 23px;
+            left: 32px;
+
+            ul{
+                li{
+                    width: 350px;
+                    font-family: 'Inter', sans-serif;
+                    font-size: 4.0vw;
+                    line-height: 1.15;
+                    font-weight: 400;
+                    list-style-type: none;
+                    letter-spacing: -2px;
+                    cursor: pointer;
+
+                    a{
+                        position: relative;
+                        display: inline-block;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            width: 0; 
+                            bottom: 44%;
+                            position: absolute;
+                            left: 0;
+                            transition: width 0.3s ease-in-out;
+                            border-bottom: 0.4vw solid #ff3901;
+                        }
+
+                        &:hover {
+                            &::after{
+                                width: 105%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+        div.logo-bottom{
+            width: 21vw;
+            bottom: 18px;
+            transform: translateX(-50%);
+            left: 50vw;
+            text-align: center;
+            position: fixed;
+            svg{
+                z-index: 1;
+            }
+        }
+
+    }
+
+    div.footer-container{
+        // position: relative;
+        position: fixed;
+        width: 410.42px;
+        right: 26px;
+        bottom: 26px;
+        padding-bottom: 3px;
+        font-weight: 300;
+        
+        ul.sns{
+            font-size: 20px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            li{
+                padding:0 5 px;
+            }
+
+            li.lang-set{
+                // display: none;
+                padding: 0 0 0 15px;
+                position: relative;
+                &::before{
+                    content: "";
+                    top: 8px;
+                    display: inline-block;
+                    width: 2px;
+                    height: 15px;
+                    background-color: #ff3901;
+                    position: absolute;
+                    // left: -3px;
+                    vertical-align: middle;
+                    margin-right: 50px
+                }
+
+                .aa{
+                    color:#ff3901;
+                    cursor: pointer;
+                    margin-left: 25px;
+
+                    .lang{
+                        display: none;
+                        position: absolute;
+                        // top:-200%;
+                        // right:-20%;
+                        left: 50%;
+                        top:-50px;
+                        opacity:0;
+                    }
+                }
+                .aa:hover{
+                    .lang{
+                        display: block;
+                        animation: langset 1s forwards;
+                    }
+                }
+
+                .aa:hover li:nth-of-type(2){
+                    animation:  langset 0.5s forwards;
+                    animation-delay: 0.1s;
+                }
+        
+                .aa:hover li:nth-of-type(1){
+                    animation:  langset 0.5s forwards;
+                }
+                }
+        }
+    }
+
+    @keyframes langset {
+        from{
+            opacity: 0;
+        }
+
+        to{
+            opacity:1;
+        }
+    }
+}
+
+// ************************************** 반응형 ******************************************************//
+
+@media (min-width:769px) and (max-width:1024px) {
+    div.logo-top{
+        width: 30vw;
+        top: 26px;
+        transform: translateX(-50%);
+        text-align: center;
+        left: 50vw;
+        position: fixed;
+        svg{
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width:521px) and (max-width: 768px) {
+
+}
+
+@media (max-width: 520){
+
+}

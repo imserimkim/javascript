@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap');
+
+
+@font-face {
+    font-family: 'NS';
+    font-display: swap;
+    src: local('Noto Sans CJK KR'), local('NotoSansCJKkr-Regular'),
+      url('fonts/NotoSans-Regular.woff2') format('woff2'),
+      url('fonts/NotoSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'NS';
+    font-display: swap;
+    src: local('Noto Sans CJK KR'), local('NotoSansCJKkr-Medium'),
+      url('fonts/NotoSans-Medium.woff2') format('woff2'),
+      url('fonts/NotoSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  
+  /* neue haas unica pro
+  @font-face {
+    font-family: 'NHU';
+    font-display: swap;
+    src: local('Neue Haas Unica Pro'), local('NeueHaasUnicaPro-Regular'),
+      url('fonts/nhu.woff2') format('woff2'),
+      url('fonts/nhu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  /*@font-face {
+    font-family: 'NHU';
+    font-display: swap;
+    src: local('Neue Haas Unica Pro'), local('NeueHaasUnicaPro-Medium'),
+      url('fonts/nhu-medium.woff2') format('woff2'),
+      url('fonts/nhu-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+  }
+  */
+   

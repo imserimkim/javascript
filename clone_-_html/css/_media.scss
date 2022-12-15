@@ -1,0 +1,18 @@
+$mobile: 360px;
+$tablet: 768px;
+
+@mixin device($min, $max){
+    @media (min-width:360px) and (max-width:767px) {
+        @content;
+    }
+}
+
+@include device($mobile,$tablet){
+    //mobile
+    body{background-color: red}
+};
+
+@include device(768px,1024px){
+    //tablet
+    body{background-color: black;}
+};

@@ -1,0 +1,224 @@
+@import url("../css/font.css");
+body, html, p, a, ul, li, nav, div {
+  margin: 0px;
+  padding: 0px;
+}
+
+ol, ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: #FF3901;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body header {
+  width: 100vw;
+  height: 114px;
+  margin: 0 auto;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 9999999;
+}
+body header div.menu {
+  display: flex;
+  justify-content: space-between;
+}
+body header div.menu div.menu-left ul {
+  height: 100%;
+  font-size: 26px;
+  display: flex;
+  font-family: "Inter", sans-serif;
+  justify-content: space-around;
+  letter-spacing: -0.5px;
+}
+body header div.menu div.menu-left ul li {
+  padding: 20px 30px;
+  vertical-align: middle;
+  align-items: center;
+}
+body header div.menu div.menu-right ul {
+  height: 100%;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-around;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.5px;
+}
+body header div.menu div.menu-right ul li {
+  padding: 20px 30px;
+  vertical-align: middle;
+  align-items: center;
+}
+body div.menu ul li a {
+  display: inline-block;
+  position: relative;
+}
+body div.menu ul li a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 2px solid #ff3901;
+  width: 0;
+  transition: width 0.4s ease-in-out;
+}
+body div.menu ul li a:hover::after {
+  width: 100%;
+}
+body div.menu ul li a:hover::after, body div.menu ul li a.active::after {
+  width: 100%;
+}
+body div.logo-top {
+  width: 15vw;
+  top: 26px;
+  transform: translateX(-50%);
+  text-align: center;
+  left: 50vw;
+  position: fixed;
+}
+body div.logo-top svg {
+  width: 100%;
+}
+body footer div.copyright {
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  position: fixed;
+  z-index: 1;
+  left: 30px;
+  bottom: 32px;
+}
+body footer div.copyright p {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: #ff3901;
+}
+body footer div.logo-bottom {
+  width: 100;
+  height: 69.89px;
+  bottom: 21px;
+  transform: translateX(-50%);
+  left: 50vw;
+  text-align: center;
+  position: fixed;
+}
+body footer div.logo-bottom svg {
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+body footer div.footer-container {
+  position: fixed;
+  width: 410.42px;
+  right: 10px;
+  bottom: 26px;
+  padding-bottom: 3px;
+  font-weight: 300;
+}
+body footer div.footer-container ul.sns {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+body footer div.footer-container ul.sns li {
+  padding: 0 5 px;
+}
+body footer div.footer-container ul.sns li.lang-set {
+  padding: 0 0 0 15px;
+  position: relative;
+}
+body footer div.footer-container ul.sns li.lang-set::before {
+  content: "";
+  top: 8px;
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background-color: #ff3901;
+  position: absolute;
+  vertical-align: middle;
+  margin-right: 50px;
+}
+body footer div.footer-container ul.sns li.lang-set .aa {
+  color: #ff3901;
+  cursor: pointer;
+  margin-left: 25px;
+}
+body footer div.footer-container ul.sns li.lang-set .aa .lang {
+  display: none;
+  left: 50%;
+  top: -50px;
+  opacity: 0;
+}
+body footer div.footer-container ul.sns li.lang-set .aa:hover .lang {
+  display: block;
+  -webkit-animation: langset 1s forwards;
+          animation: langset 1s forwards;
+}
+body footer div.footer-container ul.sns li.lang-set .aa:hover li:nth-of-type(2) {
+  -webkit-animation: langset 0.5s forwards;
+          animation: langset 0.5s forwards;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+body footer div.footer-container ul.sns li.lang-set .aa:hover li:nth-of-type(1) {
+  -webkit-animation: langset 1s forwards;
+          animation: langset 1s forwards;
+}
+@-webkit-keyframes langset {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes langset {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.lang-kor a {
+  position: relative;
+}
+
+.lang-kor a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 3px solid #FF3901;
+  bottom: 40%;
+  width: 100%;
+}
+
+.lang-eng a {
+  position: relative;
+}
+
+.lang-eng a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-bottom: 3px solid #FF3901;
+  bottom: 40%;
+  width: 0;
+  left: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+.lang-eng a:hover::after {
+  width: 100%;
+}/*# sourceMappingURL=common.css.map */

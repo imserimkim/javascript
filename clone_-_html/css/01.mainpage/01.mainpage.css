@@ -1,0 +1,214 @@
+@import url("../css/font.css");
+body, html, p, a, ul, li, nav, div {
+  margin: 0px;
+  padding: 0px;
+}
+
+ol, ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  color: #FF3901;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body div.artist-wrap {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top: 4%;
+  z-index: -9999;
+  position: fixed;
+}
+body div.artist-wrap ul.artist-image {
+  display: flex;
+  padding-top: 114px;
+  transform: scale(1.5);
+}
+body div.artist-wrap ul.artist-image li {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+body div.artist-wrap ul.artist-image li a {
+  width: 100%;
+  height: 100%;
+}
+body div.artist-wrap ul.artist-image li a img {
+  max-width: 50vw;
+  max-height: 73vh;
+}
+body div.logo-top {
+  width: 15vw;
+  top: 26px;
+  transform: translateX(-50%);
+  text-align: center;
+  left: 50vw;
+  position: fixed;
+}
+body div.logo-top svg {
+  width: 100%;
+}
+body div.btn {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 30px;
+}
+body div.btn div.left-btn {
+  width: 40px;
+}
+body div.btn div.left-btn a img {
+  width: 100%;
+}
+body div.btn div.right-btn {
+  width: 40px;
+}
+body div.btn div.right-btn a img {
+  width: 100%;
+}
+body div.container div.menu {
+  width: 350px;
+  z-index: 2;
+  position: fixed;
+  bottom: 23px;
+  left: 32px;
+}
+body div.container div.menu ul li {
+  width: 350px;
+  font-family: "Inter", sans-serif;
+  font-size: 4vw;
+  line-height: 1.15;
+  font-weight: 400;
+  list-style-type: none;
+  letter-spacing: -2px;
+  cursor: pointer;
+}
+body div.container div.menu ul li a {
+  position: relative;
+  display: inline-block;
+}
+body div.container div.menu ul li a::after {
+  content: "";
+  display: block;
+  width: 0;
+  bottom: 44%;
+  position: absolute;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+  border-bottom: 0.4vw solid #ff3901;
+}
+body div.container div.menu ul li a:hover::after {
+  width: 105%;
+}
+body div.container div.logo-bottom {
+  width: 21vw;
+  bottom: 18px;
+  transform: translateX(-50%);
+  left: 50vw;
+  text-align: center;
+  position: fixed;
+}
+body div.container div.logo-bottom svg {
+  z-index: 1;
+}
+body div.footer-container {
+  position: fixed;
+  width: 410.42px;
+  right: 26px;
+  bottom: 26px;
+  padding-bottom: 3px;
+  font-weight: 300;
+}
+body div.footer-container ul.sns {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+body div.footer-container ul.sns li {
+  padding: 0 5 px;
+}
+body div.footer-container ul.sns li.lang-set {
+  padding: 0 0 0 15px;
+  position: relative;
+}
+body div.footer-container ul.sns li.lang-set::before {
+  content: "";
+  top: 8px;
+  display: inline-block;
+  width: 2px;
+  height: 15px;
+  background-color: #ff3901;
+  position: absolute;
+  vertical-align: middle;
+  margin-right: 50px;
+}
+body div.footer-container ul.sns li.lang-set .aa {
+  color: #ff3901;
+  cursor: pointer;
+  margin-left: 25px;
+}
+body div.footer-container ul.sns li.lang-set .aa .lang {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: -50px;
+  opacity: 0;
+}
+body div.footer-container ul.sns li.lang-set .aa:hover .lang {
+  display: block;
+  -webkit-animation: langset 1s forwards;
+          animation: langset 1s forwards;
+}
+body div.footer-container ul.sns li.lang-set .aa:hover li:nth-of-type(2) {
+  -webkit-animation: langset 0.5s forwards;
+          animation: langset 0.5s forwards;
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+body div.footer-container ul.sns li.lang-set .aa:hover li:nth-of-type(1) {
+  -webkit-animation: langset 0.5s forwards;
+          animation: langset 0.5s forwards;
+}
+@-webkit-keyframes langset {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes langset {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  div.logo-top {
+    width: 30vw;
+    top: 26px;
+    transform: translateX(-50%);
+    text-align: center;
+    left: 50vw;
+    position: fixed;
+  }
+  div.logo-top svg {
+    width: 100%;
+  }
+}/*# sourceMappingURL=01.mainpage.css.map */
