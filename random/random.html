@@ -30,16 +30,16 @@
 
 
     let data = [
-        {src:'./img/01.jpg'},
-        {src:'./img/02.jpg'},
-        {src:'./img/03.jpg'},
-        {src:'./img/04.jpg'},
-        {src:'./img/05.jpg'},
-        {src:'./img/06.jpg'},
-        {src:'./img/07.jpg'},
-        {src:'./img/08.jpg'},
-        {src:'./img/09.jpg'},
-        {src:'./img/10.jpg'},
+        {src:'../img/01.jpg'},
+        {src:'../img/02.jpg'},
+        {src:'../img/03.jpg'},
+        {src:'../img/04.jpg'},
+        {src:'../img/05.jpg'},
+        {src:'../img/06.jpg'},
+        {src:'../img/07.jpg'},
+        {src:'../img/08.jpg'},
+        {src:'../img/09.jpg'},
+        {src:'../img/10.jpg'},
     ];
 
     let imgURL = ranFun(10)-1;
@@ -48,7 +48,7 @@
     let elImg = document.createElement('img');
         elImg.src = data[imgURL].src;      // -1 하는 이유: 0~10 까지 넣기 위해 (배열을 충족)
         // elImg.src=data[Math.ceil(Math.random()*10)-1].src
-        // elImg.src = './img/01.jpg';
+        // elImg.src = '../img/01.jpg';
 
         //append()는 요소 뒤쪽에 추가 
             // document.body.append(elImg);  
