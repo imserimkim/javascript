@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 12/21</title>
+</head>
+<body>
+    <article>
+        <h2>약관동의</h2>
+        <form id="form_join" action="form-join.html">                   <!--form에는 action이 있음-->
+            <ul>
+                <li>
+                    <input id = "terms" type="checkbox">
+                    <label for = "terms"></label>
+                    이용약관 동의
+                </li>
+                <li>
+                    <input id = "privacy" type="checkbox">
+                    <label for = "privacy"></label>
+                    개인정보수집 동의
+                </li>
+                <li>
+                    <input id = "all" type="checkbox">
+                    <label for = "all"></label>
+                    전체 동의
+                </li>
+                <li>
+                    <input type = "submit" value="확인">
+                </li>
+            </ul>
+        </form>
+    </article>
+
+    <style>
+        li{
+            list-style-type: none;
+        }
+        input:not([type='submit']){
+            display: none;
+        }
+
+        /* input[type='submit']{
+            display: block;
+        } */
+
+        label{
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: #dddd;
+            text-align: center;
+        }
+        label::after{
+            content: 'v';
+            font-size: 12px;
+            vertical-align: top;
+        }
+        input:checked+label{
+            background-color: red;
+        }
+    </style>
+    <script>
+
+        window.addEventListener('click', (e)=>{                      //화살표 함수 안에서 this 사용안됨 
+            
+            // -> 약관동의, 수집동의 상태를 일치  
+            // if(all.checked){
+            //     terms.checked = true;
+            // }else{
+            //    terms.checked = false;
+            // }
+
+            // terms.checked = all.checked;
+            // privacy.checked = all.checked;
+            
+
+            if (e.target.id == 'all') {
+                terms.checked = all.checked;
+                privacy.checked = all.checked;
+            }
+            if(terms.checked && privacy.checked){
+                all.checked = true;
+            }
+            else{
+                all.checked = false;
+            }
+
+
+            console.log(e.target.id)
+            
+        })
+
+
+        window.addEventListener('submit', function(e) {
+            e.preventDefault(); // 브라우저 정지 
+            // console.log('submit 이벤트 발생!!!')
+
+            // 동의 체크 박스 상태 (true, false)
+            // console.log(terms.checked)           //submit 눌러서 확인해보기(check되면 true)
+            // console.log(privacy.checked)
+            // console.log(all.checked)
+            if(!terms.checked){
+                alert('약관동의 해주세요.');
+                return;                                 //정보 하나씩 사용하기
+            }
+            if(!privacy.checked){
+                alert('정보수집동의 해주세요.');
+                return;                                 
+            }
+
+            form_join.submit();
+        })
+    </script>
+</body>
+</html>
