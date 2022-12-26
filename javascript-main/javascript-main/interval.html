@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- interval  11/29  -->
+
+    <!-- 비동기(비순차처리) / 동기(순차처리) -->
+
+    <!-- <div>gradient box</div>
+    <style>
+        div{
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(
+             pink ,
+               violet);
+        }
+    </style> -->
+
+
+    <script>
+        let num = 0; 
+        // let inter = setInterval(함수,시간);      // 무한 반복
+        let inter = setInterval(function(){
+            if(num<100){
+                num++;
+            }else{
+                clearInterval(inter);
+            }
+            // console.log(num);
+        },100);
+
+        // let timeOut = setTimeout(함수,시간);     // 반복 x
+        let timeOut = setTimeout(function(){
+            console.log('2초 알람');
+        },2000);                              // 애니메이션이 순차적으로 등장하는 효과에 적용할 수 있음
+            clearTimeout(timeOut); 
+
+
+    </script>
+
+    <!-- 원형 그래프 만들기  -->
+    <div class="ex-progress">
+            <p>0%</p>
+    </div>
+    <style>
+        .ex-progress{
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border-radius: 50%;
+            background: conic-gradient(rgb(69, 26, 226) 0%, lightgray 0%);   /*중간 색상 없애주기*/
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .ex-progress > p{
+            background-color: #fff;
+            width: 100%;
+            height: 100%;
+            font-size: 3rem;
+            border-radius: 50%;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        // 변경 대상자
+            // background: conic-gradient(rgb(224, 122, 137) 10%, lightgray 0%); 
+            // <p>100%</p>
+
+        const elProgress = document.querySelector('.ex-progress'),
+            elTxt = document.querySelector('.ex-progress > p');
+
+        let numPer = 0;
+
+        setTimeout(function(){
+            let progress = setInterval(function(){
+                if (numPer<100){
+                    numPer++;
+                    elProgress.style = `background: conic-gradient(rgb(69, 26, 226) ${numPer}%,
+                     lightgray 0%);`; //스타일 변경
+                    
+                    elTxt.textContent = `${numPer}%`;  // p 태그 내용 변경 
+                }
+                else{
+                clearInterval(inter);
+                }
+
+
+            },1);
+        },100);
+            clearTimeout(timeOut); 
+
+
+            // function 값에 넣어서 만들기
+                // setTimeout(function progressFun(n){
+                //     let progress = setInterval(function(){
+                //         if(numPer<n){
+                //             numPer++;
+                //             elProgress.style=`background: conic-gradient(rgb(69, 26, 226) ${numPer}%,
+                //         lightgray 0%);`;
+
+                //         elTxt.textContent = `${numPer}%`;
+                //         }
+                //         else{
+                            
+                //             progressFun(80)
+                //             clearInterval(inter);
+                //         }
+
+
+                //     }
+                    
+                //     ,1);
+                // },100);
+                // clearTimeout(timeOut); 
+
+
+        
+
+
+    </script>
+
+
+<div class="photo">
+    <!-- <img src="../다운t/img/c01.png">
+    <img src="../다운t/img/c01.png">
+    <img src="../다운t/img/c01.png"> -->
+</div>
+
+<style>.photo img{width: 20%;}</style>
+
+<script>
+    const elPhoto = document.querySelector('.photo');
+
+    let data = [                                             //배열안의 값이 3개[{},{},{}]
+                    {
+                        name:'test01',
+                        url: '../다운t/img/c01.png',
+                    },
+                    {
+                        name:'test02',
+                        url: '../다운t/img/c02.png',
+                    },
+                    {
+                        name:'test03',
+                        url: '../다운t/img/c03.png',
+                    }
+                ]
+    // data.url //''../다운t/img/c01.png'
+
+    // data[0].url
+            // {
+            //     name:'test01',
+            //         url: '../다운t/img/c01.png',
+            //     }
+
+    data.forEach(function(obj,key){
+        setTimeout(function(){
+            elPhoto.innerHTML += `<img src="${obj.url}">`;
+
+        },1000*key)
+    })
+
+
+</script>
+</body>
+</html>

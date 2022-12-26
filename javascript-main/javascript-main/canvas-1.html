@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas 12/22</title>
+</head>
+<body>
+    <canvas width="1000" height="900"></canvas>
+
+    <script>
+        const canvas = document.querySelector('canvas'),
+            ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = 'pink';
+        ctx.fillRect(0, 0, 100, 100);   //x,y,w,h
+
+        ctx.strokeStyle = 'green';
+        ctx.strokeRect(150, 0, 100, 100);   //x,y,w,h
+
+        ctx.arc(350, 50, 50, 0, Math.PI * 2, false); //false 시계방향 , true: 반시계방향
+        ctx.strokeStyle = 'purple';   
+        ctx.stroke();
+        //x, y, r, start deg, end deg, cw
+
+        ctx.beginPath();
+        ctx.strokeStyle =  ' rgba(159,148,233,1)'; 
+        ctx.lineWidth = 5;
+        ctx.lineCap = 'round'  
+        ctx.lineTo(450, 50);   //x,y
+        ctx.lineTo(550, 50);   //x,y
+        ctx.stroke();
+        ctx.closePath(); 
+
+        const image = new Image();
+        image.src = './img/01.jpg';
+
+        image.addEventListener('load', () => {
+
+            ctx.drawImage(image, 0, 200, 400, 300)
+        })
+
+        const video = document.createElement('video');
+        video.src = './video/video01.mp4';
+        video.loop = 'loop';
+        video.muted='muted';       // 소리를 줄여야 autoplay가 가능함 
+        video.play();
+
+        video.addEventListener('canplaythrough', drawVideo)
+
+        function drawVideo() {
+            ctx.drawImage(video, 500, 200, 500, 400);
+            requestAnimationFrame(drawVideo);  
+        }
+
+        console.log(ctx); 
+
+    </script>
+</body>
+</html>

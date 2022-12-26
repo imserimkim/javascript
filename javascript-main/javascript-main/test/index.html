@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./index.js"></script>
+</head>
+<body>
+    <h1>Setflix</h1>
+    <article class="gallery">
+        <div class="thumb">
+            <figure> <img src="./image/01.jpg"> </figure>
+        </div>
+        <div class="detail">
+            <article>
+                <figure>
+                    <img src="./image/01.jpg">
+                    <figcaption> 
+                        <h2>영화명</h2>
+                        줄거리 
+                    </figcaption>
+                </figure>
+            </article>
+        </div>
+
+    </article>
+
+    <style>
+        body{
+
+            background-color: black;
+        }
+
+        h1{
+            font-size: 50px;
+            margin-left: 100px;
+            color: rgb(212, 3, 3);
+        }
+        
+        .figure{margin: 0;}
+        .gallery{
+            width: 60%;
+            margin: 95px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .gallery .thumb{
+            width: 30%;
+        }
+        .gallery .thumb figure img{
+            width: 100%;
+        }
+
+        .gallery .detail article{
+            width: 600px;
+            height: 700px;
+            padding: 0 5%;
+            color: #fff
+        }
+
+        .gallery .detail article img{
+            width: 100%;
+        }
+        
+        .thumb img:hover{
+            border: 2px solid rgb(156, 12, 12);
+        }
+    </style>
+
+</body>
+</html>

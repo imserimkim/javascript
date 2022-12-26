@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie 12-13</title>
+</head>
+<body>
+
+    <div class="popup">
+        <img src="../img/06.jpg">
+        <div>
+            <input type="checkbox">오늘 하루동안 보지 않기
+            <button>닫기</button>
+
+        </div>
+    </div>
+
+
+    <script>
+        
+        const elCheck = document.querySelector('input[type=checkbox]'), 
+            elBtn = document.querySelector('button'),
+            elPopup = document.querySelector('.popup');
+
+            elBtn.addEventListener('click', function(){
+
+                if(elCheck.checked){
+                    let today = new Date();
+                    today.setSeconds(today.getSeconds() + 10);
+                    //today.setDate()(today.getDate()+1);
+                    document.cookie = `popup=가격할인이벤트!;expires=${today.toUTCString()}`;
+                }
+                
+                elPopup.style = 'display:none';
+            });
+
+            // console.log(document.cookie.match('가격할인이벤트'))
+
+            
+
+            if(document.cookie.match('가격할인이벤트')) {
+                elPopup.style = 'display:none';
+            }else {
+                elPopup.style = 'display:block'
+            }
+        
+    </script>
+
+
+    <!-- 인트로 페이지도 적용  -->
+</body>
+</html>

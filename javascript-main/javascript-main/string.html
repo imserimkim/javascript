@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string 12/01</title>
+</head>
+<body>
+    <!--  string 12/01 -->
+
+    <script>
+        let str1 = "javascript";
+
+        let arry = [10,20,30,40,50,60,70,80];
+
+        console.log(
+            str1.replace('s','T'),
+            str1.split('s'),       // <=> str1=['java','cript']
+            str1.split('s')[0],    // <=> java
+            str1.slice(4),          // <=> script
+            str1.slice(4,5),        // 4 ~ 5 번 중 5번(last index)만 제외
+            str1.slice(4,9),
+            str1.toUpperCase(),    // toUpperCase: 대문자로 변경, toLowerCase: 소문자변경
+            str1.match('va'),     //nul, array
+            arry.splice(4,2,100)    //index, length, value
+
+        ); 
+
+        console.log(
+            arry
+        )
+
+
+
+
+
+        // for(let i=0; i<str1.length;i++){
+        //     console.log(str1[i])
+        // }
+        console.log(
+            str1[0],
+            str1.charAt(0),
+            str1.substr(4,2),     //첫번째 숫자는 index , 두번째 숫자는 length
+            str1.indexOf('s'),   // 찾고자 하는 문자의 순서를 알고 싶을때 사용
+            str1.lastIndexOf('a'),  //우측에서 좌측으로 이동
+            str1.indexOf('script'),
+            str1.indexOf('a',2), //index번호 2번째부터 검색하라는 뜻 
+        )
+    </script>
+
+
+<div class="str">
+    <img src="../img/01.jpg">
+</div>
+<script>
+    const elStr = document.querySelector('.str img');
+
+    let imgUrl = elStr.getAttribute('src');  /*  ./img/01.jpg */
+    let reUrl = imgUrl.replace('01','02');
+
+    
+    // let sIdx = imgUrl.lastIndexOf('/');
+    // let eIdx = imgUrl.lastIndexOf('.');
+    //elStr.src = reUrl; 
+    elStr.setAttribute('src',reUrl);
+    
+    // imgUrl.slice(sIdx+1,eIdx)
+
+    // html 문서안에 있는 이미지태그 src값을 가져온다
+    let imgUrl2 = elStr.getAttribute('src');
+
+    // 가져온 문자의 끝에서부터 / 문자를 찾는다.(index값 반환)
+    let sIdx = imgUrl2.lastIndexOf('/');
+
+    // 가져온 문자의 끝에서부터 . 문자를 찾는다.(index값 반환)
+    let eIdx = imgUrl2.lastIndexOf('.');
+
+    //가져온 문자 /에서 . 사이의 문자를 잘라온다.
+    let imgName = imgUrl2.slice(sIdx+1,eIdx)
+
+    // slice한 이미지명을 03으로 바꾼다.
+    let reUrl2 = imgUrl2.replace(imgName,'03');
+
+    //html문서 안에 이미지 src값을 수정한다. 
+    elStr.setAttribute('src',reUrl2);
+    
+
+
+
+    // 브라우저 URL 값  ***********************
+        // location.hash(해시문자) 
+        // location.href(전체주소)
+        // location.pathname(도메인 제외한 문자)
+    
+        //변경
+        // location.href = "naver.com"
+
+    let url = location.href;
+    // http://127.0.0.1:5501/Javascript/string.html
+    let sIdx1 = url.lastIndexOf('/');
+
+
+    console.log(
+            //string.html
+            url.slice(sIdx1+1)
+    )
+
+            // 선생님 정답 ***********************
+                // let url = location.href;
+                // let idx = url.lastIndexOf('/')+1;
+
+                // console.log(
+                //     url.substr(idx),
+                //     url.slice(idx)
+                // );
+            // **********************************
+
+    // console.log(
+    //     imgUrl.slice(sIdx+1,eIdx)
+
+    // )
+    
+
+    // console.log(
+    //     elStr.src,                   //브라우저의 문자를 가져옴 
+    //     elStr.getAttribute('src')    //html 문서안에 있는 문자를 가져옴
+    // );
+
+    
+    // 수정방법  ***********************
+        // elStr.src="";
+        // elStr.setAttribute('src','02.jpg');
+
+        // console.log(
+        //     imgUrl.replace('01','02') /*  ./img/02.jpg */
+        // );
+    //  *******************************
+
+
+    //문자 구간 선택
+        // ./img/02.jpg
+
+
+</script>
+</body>
+</html>

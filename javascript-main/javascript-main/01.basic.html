@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="url.js">
+      
+
+    </script> <!-- defer: 문서를 load만 하고 실행은 시키지 않음 -->
+</head>
+<body>
+    <!-- basic.html -->
+    <div>변수를 활용한 값 - </div>
+    <!-- <div>aaaaa</div> -->
+
+    <script>
+    //문자 = '문자열';  // '=': 우측값이 좌측값으로 넘어가는 것 
+    //문자 = '문자열 12354';
+
+    //숫자 = 34555;
+    //숫자 = 100;
+    // 변수(const, let, var)
+
+        const A = "문자열"; 
+            // A = '문자열 1234'; => 이것처럼 사용할 수 없음. const는 값을 갱신할 수 없음 
+
+        let B = 12344; 
+            B = 100; // let은 값을 갱신할 수 있음 
+
+        //console.log(typeof (A+B)); //콘솔창에 값이 나타남 => 출력: string100
+        //console.log(A+(B+B));   // => 출력 : 문자열200
+        //console.log(typeof B);    // => 출력: number
+    
+    // div{명령}
+        const elDiv = document.querySelector('div');
+
+        // elDiv.textContent = 'A'; // elDiv 값이 div 안으로 변경,  textContent = 문자로만 변경 
+        // elDiv.textContent = A+B;
+        // elDiv.textContent = '';  // 빈 문자열 
+        
+        //elDiv.textContent = elDiv.textContent + B; // 기존 내용에 덧붙이기
+        
+        elDiv.textContent += B; // == elDiv.textContent = elDiv.textContent + B;
+
+    // 산술연산자 +,-,*,/,%
+    // 증감연산자 ++, --
+    // 비교연산자 <,>,>=,<=,==,===,!=, !==
+    // 관계연산자 &&, ||
+
+        let a = 10, b = 20; // 여러개의 변수 선언 
+        elDiv.textContent = a + b; // ==> 출력:30
+        elDiv.textContent += ','+ a - b;    
+        elDiv.textContent += ','+ (a - b);   
+        elDiv.textContent += ','+ (a * b);   
+        elDiv.textContent += ','+ (a / b);
+        elDiv.textContent += ','+ (a & b);
+
+        //++a++ 증감연산자는 앞/전에 모두 들어올 수 있음 
+        elDiv.innerHTML += '<br>'+(++a);
+        elDiv.innerHTML += ','+(a++);  // 명령이 끝난 후에 값이 변경된다. 
+        elDiv.innerHTML += ','+(a);
+
+        elDiv.innerHTML += '<br>'+(a > b);
+        elDiv.innerHTML += '<br>'+(a < b);
+        elDiv.innerHTML += '<br>'+(a == b);
+        elDiv.innerHTML += '<br>'+(a != b);
+
+        a='20';
+        elDiv.innerHTML += '<br>'+(a == b);  //값을 비교
+        elDiv.innerHTML += '<br>'+(a === b); //타입을 비교 
+        elDiv.innerHTML += '<br>'+(a !== b);
+
+        elDiv.innerHTML += '<br>'+(a >= b); 
+        a= 10; 
+        elDiv.innerHTML += '<br>'+(a >= b);
+
+
+        let x = (a < b) && (a == b); // true, false , &&= and (두개의 값이 true가 나와야 결과가 true )
+        elDiv.innerHTML += '<br>'+ x;
+        let z = (a < b) || (a == b); // true, false , ||=or (두개의 값 중 하나만 true여도 true)
+        elDiv.innerHTML += '<br>'+ z;
+        
+    // 비교, 관계 (true, false) boolean - 상황의 상태에 따라 명령할때 
+        let user = prompt('나이를 입력해주세요!');
+        let blen = 19 < user; 
+        //boolean (yes, no)
+
+        if(blen){
+            console.log('어서오세요~~고객님^^');
+            //if는 true일때 실행
+        }else{
+            console.log('어허~~ 이놈시끼 ~~');
+            //else는 false일때 실행
+        }
+
+
+        if(조건){
+
+        }else if(조건){
+
+        }else if(조건){
+
+        }else{
+
+        }
+
+        // 사용예시 : 성인인증, 홀수짝수, 성별(주민번호 숫자로 구별), 자격증수, 연령, 구매여부, 아이디/패스워드 , 수신동의 ......
+        
+
+        console.log( elDiv.textContent )
+
+
+        let d =10; 
+            d += 10;         //d=d+10 (+=: 할당연산자 => 변수값 갱신)
+            d *= 10;         //d=d*10=20*10=200
+
+    //배열(여러개의 값을 가질 수 있는 변수)
+        let array = [10,20,30,40,50,60,70,80,90,100];
+                                                                //var C = 200;
+                                                                //var C = 300; 
+
+                                                                // 1. 가변변수와 불변변수 
+                                                                // var, let, const
+
+                                                                // var는 전역변수와 함수 내에서만 사용할 수 있는 지역변수로 구분
+                                                                // let은 블록 스코프의 범위에서만 값을 유지 
+                                                                // const 한번 지정하면 절대 변경되지 않는 불변변수 
+
+                                                                // ** 스코프는 변수에 접근 가능한 영역을 의미
+                                                                // ** 블록 스코프 밖에서도 변수를 참조할 수 있어 문제발생 
+    </script>
+</body>
+</html>

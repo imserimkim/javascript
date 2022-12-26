@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery 12-9</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    
+</head>
+<body>
+    <article class="faq">
+        <h2>FAQ</h2>
+        <ul>
+            <li>
+                Q.질문 1
+                <div>A.답변 1</div>
+            </li>
+            <li>
+                Q.질문 2
+                <div>A.답변 2</div>
+            </li>
+            <li>
+                Q.질문 3
+                <div>A.답변 3</div>
+            </li>
+        </ul>
+    </article>
+
+    <script>
+        // display:none == hide(), display:block == show()  
+        $('.faq div').hide();            
+
+        $('.faq li').click(function() {
+            $(this).find('div').slideToggle();
+        })
+    </script>
+
+
+<article class="fade">
+    <h2>Fade 슬라이드</h2>
+    <div>
+        <img src="../img/01.jpg">
+        <img src="../img/02.jpg">
+        <img src="../img/03.jpg">
+    </div>
+</article>
+
+<style>
+    .fade div{
+        position: relative;
+        width: 400px;
+    }
+    
+    .fade div img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+    }
+
+</style>
+<script>
+    $('.fade img').not(":first").hide();  // first = first-child , last = last-child
+
+    let num = 0, fadeInterval; 
+
+    fadeInterval = setInterval(function(){
+    
+    $('.fade img').eq(num).fadeOut(1000);
+    num++;
+    if(num>2){                                    // <=> (num==2) ? num = 0 : num++; 
+        num = 0;
+    }
+    $('.fade img').eq(num).fadeIn(1000);   },2000)
+
+
+    // 두번째 -> 0,1
+    // 세번째 -> 1,2
+    // 첫번째 -> 2,0 
+
+</script>
+
+<article class="effect">
+    <h2 class="aa" class="ui-state-default ui-corner-all">effect</h2>
+    <div> 
+        blind, bounce, clip, drop, explode, fade, fold, highlight,
+        puff, pulsate, scale, shake, size, slide, transfer
+    </div>
+</article>
+
+<style>
+    .effect {
+        margin: 400px 0;
+        overflow: hidden;
+    }
+    .effect div {
+        border: 1px solid black;          /* scale, transfer, size는 추가 요건(option)이 필요함 */
+        padding: 40px; 
+        width: 400px;
+
+    }
+
+    .ui-effects-transfer{
+        border: 2px dotted gray;
+        background-color: whitesmoke;
+    }
+</style>
+
+<script>
+    // scale, transfer, size 
+    let option = {to : '.effect h2', className: 'ul-effects-transfer'};
+    $('.effect > div').effect('transfer',option, 500); 
+    //to 뒤는 들어갈 대상자 
+
+    $('.effect div')
+    .animate({marginLeft: 200}, 1000, 'easeOutBounce')
+    .animate({marginLeft: 0}, 1000, 'easeOutBounce');
+
+    // slideToggle, slideDown, slideUp
+    // fadeIn, fadeOut, fadeToggle 
+    // animate, 
+    // effect
+
+</script>
+</body>
+</html>

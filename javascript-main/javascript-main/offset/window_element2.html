@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- window_element.html -->
+
+    <div><img src="../img/01.jpg"> </div>
+
+    <script>
+
+        window.onload = function(){
+            const elImg = document.querySelector('img');
+    
+            console.log(
+                elImg.offsetWidth,
+                elImg.offsetHeight,
+                elImg.offsetTop,
+                elImg.offsetLeft,
+            )
+
+            console.log(
+                window.innerHeight,
+                window.innerWidth,
+
+                window.screen.width,
+                window.screen.height,
+            )
+        }
+
+    </script>
+
+
+
+    <div class="offset">
+        <img src="../img/01.jpg">
+        <img src="../img/02.jpg">
+        <img src="../img/03.jpg">
+        <p></p>
+    </div>
+    <style>
+        .offset{position: relative;}
+        .offset img{width:300px;}
+        .offset p{
+            border:5px solid #f00;
+            box-sizing: border-box;
+            position: absolute;
+            transition: 0.5s;
+            margin:0;
+            width:0; height:0; left:0; top:0;
+        }
+    </style>
+
+    <script>
+    window.addEventListener('load',function(){
+
+        const elOffset = document.querySelectorAll('.offset img'),
+              elLine = document.querySelector('.offset p');
+
+        let pos = {w:0,h:0,x:0,y:0};
+
+            elOffset.forEach(function(el){
+                el.onclick = function(){
+                    pos.w = el.offsetWidth;
+                    pos.h = el.offsetHeight;
+                    pos.x = el.offsetLeft;
+                    pos.y = el.offsetTop;
+                    
+                    elLine.style = `width:${pos.w}px; height:${pos.h}px; 
+                                    left:${pos.x}px; top:${pos.y}px;`;
+                }
+            })
+    });
+
+
+    </script>
+
+
+    <article class="ex">
+        <h2> 이미지 슬라이드 </h2>
+        <div class="ex-g">
+            <figure>
+                <img src="../img/01.jpg">
+                <img src="../img/02.jpg">
+                <img src="../img/03.jpg">
+            </figure>
+        </div>
+    </article>
+    <style>
+        .ex{margin:200px auto; width:400px;}
+        .ex-g{
+            border:5px solid #f00;
+            box-sizing: border-box;
+        }
+        .ex-g figure{
+            width:100%; 
+            margin:0; 
+            display: flex;
+            transition:.5s;
+            position:relative;
+        }
+        .ex-g figure img{width:100%; flex-shrink: 0;}
+    </style>
+    <script>
+        window.addEventListener('load',function(){
+            const elFigure = document.querySelector('.ex figure'),
+                  elPhoto = document.querySelectorAll('.ex img');
+
+            let num = elPhoto[0].offsetWidth;
+
+                elPhoto.forEach(function(el,key){
+                    el.onclick = function(){
+
+                        let pos = elPhoto[key].offsetLeft;
+                        elFigure.style = `transform:translateX(-${pos}px)`;
+
+                    }
+                })
+        });
+
+
+    </script>
+
+
+
+
+    <article class="ex2">
+        <h2> 이미지 슬라이드 </h2>
+        <div class="ex-g">
+            <figure>
+                <img src="../img/01.jpg">
+                <img src="../img/02.jpg">
+                <img src="../img/03.jpg">
+            </figure>
+        </div>
+
+        <div>
+            <button> prev </button>
+            <button> next </button>
+        </div>
+    </article>
+    <style>
+        .ex2 { width:400px; margin:200px auto;}
+    </style>
+<script>
+    const ex2Figure = document.querySelector('.ex2 figure'),
+            ex2IMg = document.querySelectorAll('.ex2 img'),
+            btn = document.querySelectorAll('.ex2 button');
+
+    let idx = 0;
+
+        btn.forEach(function(button,key){
+            button.onclick = function(){
+                if(key == 0){
+                    //prev
+                    if(idx > 0) { idx--; }
+                }else{
+                    //next
+                    if(idx<2) { idx++; }
+                }
+
+                ex2Figure.style = `transform:translateX(${-idx*100}%)`;
+            }
+        })
+
+        //   prev버튼 클릭하면 figure을 좌측으로 이동
+        //   next버튼 클릭하면 figure을 우측으로 이동
+            
+        //   이동범위 -> 1개의 배너 크기만큼
+
+        // ex2Figure.style = `transform:translateX()`;
+</script>
+
+
+
+
+
+</body>
+</html>

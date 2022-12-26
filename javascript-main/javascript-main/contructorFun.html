@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructorFun 12/22</title>
+</head>
+
+<body>
+    <!-- constructorFun.html 응용 예시 ) 좋아요, 찜하기 등 개별 카운트 -->
+
+    <!-- test -->
+            <!-- <div class="btn">
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+                <button>1</button>
+            </div>
+
+            <script>
+                const btn = document.querySelectorAll('button');
+                btn.forEach(function(el,key){
+                    let num=1;                       // num 초기값 , 개별 공간에 num 변수가 들어감 (블록스코프 block scope)
+                    el.addEventListener('click',function(){             // el = btn 의 각각의 요소 
+                        num ++;                         
+                        el.textContent=num;          // btn의 글자에 num 값을 넣어 줌 
+                        console.log();
+                    })
+                })
+
+                // 회원등록
+                //     ㄴ 장바구니
+                //     ㄴ 구매내역
+                //     ㄴ 포인트
+                //     ㄴ 정보수정
+
+            </script> -->
+
+
+    <div>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+
+    <script>
+
+        function Test(n) {
+            this.num = n;
+            // this.print = function() {
+            //     return ++this.num;
+            // }
+
+        }
+        Test.prototype.print = function(){
+            return ++this.num;
+        }
+
+        let t1 = [];
+
+        for(let i=0; i<10; i++){
+            t1.push( new Test(0));
+        }
+
+        const btn=document.querySelectorAll('button');
+        btn.forEach((b, k) => {
+            b.onclick = () => {
+                b.textContent = t1[k].print();
+            }
+        })
+
+
+        class Test2{
+            constructor(n){
+                this.num = n; 
+                console.log('aaaaaaa')
+            }
+            print(){
+                return ++this.num;
+            }
+        }
+        let t2 = new Test2(0);
+
+        class Member{
+
+        }
+        class IdSearch extends Member{
+            
+        }
+        console.log(t2);
+
+
+    </script>
+
+
+
+
+
+</body>
+
+</html>
