@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arr.sort() / arr.reduce()</title>
+</head>
+<body>
+    <script>
+        /* arr.sor() 
+            배열 재정렬, 배열 자체가 변경되니 주의
+            인수로 정렬 로직을 담은 함수를 받음 */
+        
+            // 숫자열 
+            let arr = [1, 5, 4, 2, 3];  
+    
+            arr.sort();
+    
+            console.log(arr);               // (5) [1, 2, 3, 4, 5]
+
+            // 문자열
+            let arr1 = ['a', 'c', 'd', 'e', 'b']; 
+
+            arr1.sort();
+
+            console.log(arr1);             // (5) ['a', 'b', 'c', 'd', 'e']
+
+            // 무작위 
+            let arr2 = [27, 8, 5, 13];    // => 지급할 때 문자열로 지급 
+
+            arr2.sort();
+
+            console.log(arr2);           // (4) [13, 27, 5, 8]
+
+            // 무작위 2
+            let arr3 = [27, 8, 5, 14];
+
+                arr3.sort((a, b) => {       // 두 요소를 전달하고 크기를 비교하여 양수, 음수 판단 
+                    console.log(a,b);
+                    return a - b; 
+                }); 
+
+                /* <=> function fn(a,b){
+                    return a - b; 
+                    } 
+                    arr3.sort(fn); 
+                */
+                
+                console.log(arr3);          //(4) [5, 8, 14, 27]
+
+                // lodash 사용 => _.sortBy(arr);
+                    // http://lodash.com
+
+
+        /******************************************************
+            arr.reduce()
+            인수로 함수를 받음
+            (누적 계산값, 현재값 ) => { return 계산값}; 
+        *****************************************************/
+        
+            // #1
+                let arry = [1, 2, 3, 4, 5]; 
+
+                // for, for of, forEach 
+
+                let result = 0; 
+                arry.forEach(num => {
+                    // result = result + num ;
+                    result += num; 
+                });
+
+                console.log(result);        //15
+
+            // #2
+                let arry2 = [1, 2, 3, 4, 5]; 
+
+                const result2 = arry2.reduce((prev, cur)=>{
+                    return prev + cur;  // 누적된 계산값에 현재값 넣어 줌 
+                }, 0)     // 0 : 초기값 
+
+                console.log(result2);      //15
+            
+
+            // #3
+                let userList = [
+                    { name: "Mike", age: 30 },
+                    { name: "Tom", age:10 }, 
+                    { name: "Jane", age: 27},
+                    { name: "Sue", age: 26},
+                    { name: "Harry", age:43 },
+                    { name: "Steve", age: 60 }, 
+                ]; 
+
+                let result3 = userList.reduce((prev1, cur1)=>{    
+                    if(cur1.age > 19){
+                        prev1.push(cur1.name);
+                    }
+                    return prev1;
+                }, []);
+
+                console.log(result3);           //(5) ['Mike', 'Jane', 'Sue', 'Harry', 'Steve']
+
+            // #4
+                let userList2 = [
+                    { name: "Mike", age: 30 },
+                    { name: "Tom", age:10 }, 
+                    { name: "Jane", age: 27},
+                    { name: "Sue", age: 26},
+                    { name: "Harry", age:43 },
+                    { name: "Steve", age: 60 }, 
+                ]; 
+
+                let result4 = userList2.reduce((prev2,cur2)=>{
+                    return(prev2 += cur2.age);
+                }, 0); 
+
+                console.log(result4);         //196
+            
+            // #5
+                let userList3 = [
+                    { name: "Mike", age: 30 },
+                    { name: "Tom", age:10 }, 
+                    { name: "Jane", age: 27},
+                    { name: "Sue", age: 26},
+                    { name: "Harry", age:43 },
+                    { name: "Steve", age: 60 }, 
+                ];
+
+                let result5= userList3.reduce((prev3,cur3) =>{
+                    if(cur3.name.length === 3){
+                        prev3.push(cur3.name);
+                    }
+                    return prev3;
+                }, []); 
+
+                console.log(result5);
+                
+
+
+
+
+    </script>
+</body>
+</html>

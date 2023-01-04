@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>classList.html</title>
+</head>
+<body>
+    <!-- classList 12/05 -->
+    
+    <article class="cls">
+        <h2>클래스 추가,삭제,변경</h2>
+        <ul>
+            <li>클래스를 추가('.hot')하시오.</li>
+            <li class="hot">클래스를 삭제('.hot')하시오.</li>
+            <li class="hot">클래스의 이름('.hot')을 가져오시오.</li>
+            <li>모든 li 요소에 클래스('hot')을 추가하시오.</li>
+            <li>.hot 클래스를 선택자로 만들어 전체 수를 구하시오.</li>
+        </ul>
+    </article>
+
+    <script>
+        const elCls = document.querySelectorAll('.cls li');
+        elCls[0].classList.add('hot');    // 클래스 추가 
+        elCls[1].classList.remove('hot');   //클래스 삭제 
+        elCls[2].className += ' cool';
+
+        console.log(
+            elCls[2].className
+        );
+
+        elCls.forEach(function(el){          // 모든 li에 클래스("hot")추가  
+            el.classList.add('hot');
+        });
+
+        elCls.forEach(function(el){
+            if(el.classList.contains('cool')){
+                el.onclick = function(){
+                    // console.log('내가 쿨이다!')
+                    el.classList.toggle('hot');
+                }
+            }
+        });
+
+        const elHot = document.querySelectorAll('.hot');   // 명령의 위치에 따라 갯수가 달라짐.
+
+        console.log(
+            elHot.length
+        );
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plugin - swiper 12/19</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+
+    <style>             /* 링크보다 밑에 있어야함*/
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            margin: 0;
+        }
+
+        .swiper-slide-next{
+            color: red;
+        }
+
+        .swiper-button-prev:after{
+            color: red;
+        }
+        .swiper-button-prev{
+            border: none;
+            background: transparent;
+        }
+        .swiper-button-next{
+            border: none;
+            background: transparent;
+        }
+        .swiper-button-next:after{
+            color: orange;
+        }
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="index.js"></script>
+
+</head>
+
+<body>
+    <!--     
+    plugin
+    ㄴ swiper.html 
+--> 
+
+    <div class="swiper mySwiper">           <!--swiper class는 변경하지 말 것-->
+        <div class="swiper-wrapper" style="height: 400px;">
+            <figure class="swiper-slide">Slide 1</figure>          
+            <figure class="swiper-slide">Slide 2</figure>
+            <figure class="swiper-slide">Slide 3</figure>
+            <figure class="swiper-slide">Slide 4</figure>
+            <figure class="swiper-slide">Slide 5</figure>
+            <figure class="swiper-slide">Slide 6</figure>
+            <figure class="swiper-slide">Slide 7</figure>
+            <figure class="swiper-slide">Slide 8</figure>
+            <!-- <figure class="swiper-slide">Slide 9</figure> -->
+        </div>
+
+        <div class="btn">
+            <button class="swiper-button-next"></button>
+            <button class="swiper-button-prev"></button>
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+
+    <div class="swiper-pagination"></div>
+
+    <script>
+    function init(){
+        var swiper = new Swiper(".mySwiper", {
+
+            loop: true,
+            // loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+            // clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                360: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                    slidesPerGroup: 2,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                    // slidesPerGroup: 4,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 50,
+                    // slidesPerGroup: 5, 
+                },
+            },
+            on: {
+                slideChange: function(e) {
+                    const elActive = document.querySelector('.swiper-slide-next');
+                    // if(elActive)
+                    //     elActive.style = `color:red`;
+
+                    console.log(
+                        e.activeIndex,
+                        e.realIndex
+                    )
+                }
+            }
+        });
+    }
+
+    window.onload = init;      //defer 대신 onload 사용 
+
+    </script>
+
+
+</body>
+
+</html>
